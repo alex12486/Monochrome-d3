@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <style>
+    <meta charset="utf-8">
+    <style>
 
-    .brush .selection {
-      fill: none;
-    }
+        .brush .selection {
+            fill: none;
+        }
 
-    svg {
-      width:  100%;
-      height:   95vh;
-      margin: 0;  
-    }
+        svg {
+            width: 100%;
+            height: 95vh;
+            margin: 0;
+        }
 
-    body {
-      margin: 0;
-      background: #191919;
-      overflow: hidden;  
-    } 
+        body {
+            margin: 0;
+            background: #191919;
+            overflow: hidden;
+        }
 
-    image {
-      object-fit: cover;
-    }
+        image {
+            object-fit: cover;
+        }
 
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    input {
-      width: 50%;
-    }
+        input {
+            width: 50%;
+        }
 
-  </style>
+    </style>
 </head>
 <body>
 
 
-  <div>
+<div>
 
     <svg>
-      <filter id="monochrome"><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
-      <filter id="selected-area"><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
-      <defs>
-        <image id="image" width="100%" height="100%" xlink:href="assets/StockSnap_TNK87N7464.jpg"></image></defs>
+        <filter id="monochrome">
+            <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        </filter>
+        <filter id="selected-area">
+            <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        </filter>
+        <defs>
+            <image id="image" width="100%" height="100%" xlink:href="assets/StockSnap_TNK87N7464.jpg"></image>
+        </defs>
         <use id="monochrome-image" filter="url(#monochrome)" xlink:href="#image"></use>
         <use id="area" filter="url(#selected-area)" xlink:href="#image"></use>
-      </svg>
+    </svg>
 
-      <input type="range" min="-10" max="10" id="range" 
-      oninput="changeValue(value)" value="1" step="0.1">
+    <input type="range" min="-10" max="10" id="range"
+           oninput="changeValue(value)" value="1" step="0.1">
 
-    </div>
+</div>
 
 
-
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="scripts.js"></script>
-  </body>
-  </html>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
